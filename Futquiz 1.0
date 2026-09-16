@@ -1,0 +1,337 @@
+//LUCAS DA SILVA OLIVEIRA
+/*
+========================
+QUIZ DE FUTEBOL
+========================
+*/
+// ===BIBLIOTECAS===
+#include<stdio.h>
+#include<stdlib.h>
+// ===FUNÇÃO DO MENU===
+void menu() 
+{
+    printf("\n============================================\n");
+    printf("     QUIZ DE FUTEBOL     \n");
+    printf("============================================\n");
+    printf("1 - INICIAR QUIZ\n");
+    printf("2 - SAIR\n");
+    printf("============================================\n");
+}
+
+int main()
+{
+    // ===VARIÁVEIS===
+    char nome[50];
+    int opcao;
+    int resposta;
+    int pontuacao = 0;
+    int tentativa;
+    int tentativa2;
+    int bolas;
+    
+    //===ENTRADA DO NOME===
+    printf("============================================\n");
+    printf("Digite seu nome: ");
+    fgets(nome, 50,stdin);
+    // ===MENU OPÇÕES===
+    do
+   {
+        menu();
+    
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+    
+        //===INICIAR QUIZ===
+        if(opcao == 1)
+        {
+                printf("\nBEM VINDO AO QUIZ, %s", nome);
+                printf("Voce possui 3 tentativas por pergunta.\n");
+                printf("Perguntas fáceis = 1 ponto\n");
+                printf("Perguntas médias = 2 pontos\n");
+                printf("Perguntas difíceis = 3 pontos\n");
+                printf("Para sair durante as perguntas digite 0\n");
+    
+                //==================
+                //PRIMEIRA PERGUNTA
+                //==================
+                tentativa = 0;
+                pontuacao = 0;
+    
+                while(tentativa < 3)
+                {
+                    printf("============================================\n");
+                    printf("\nPERGUNTA FÁCIL\n\n");
+                    printf("Durante uma partida, quantos jogadores um\ntime possui em campo?\n\n");
+                    printf("1 - 9 jogadores\n\n");
+                    printf("2 - 7 jogadores\n\n");
+                    printf("3 - 11 jogadores\n\n");
+                    printf("4 - 13 jogadores\n\n");
+                    printf("5 - 10 jogadores\n\n");
+                    printf("============================================\n");
+                    printf("Resposta: ");
+                    scanf("%d", &resposta);
+                    printf("============================================\n");
+                    if(resposta == 0)
+                    {
+                    printf("Saindo do programa...");
+                    return 0;
+                    }
+                    else if(resposta == 3) 
+                    {
+                        printf("Resposta correta!!!\n");
+                        pontuacao += 1;
+                        break;
+                    }
+                    else
+                    {
+                        printf("Resposta incorreta!\n");
+                        tentativa++;
+                    }
+                }
+                //=================
+                //SEGUNDA PERGUNTA
+                //=================
+                tentativa = 0;
+                while(tentativa < 3)
+                {
+                    printf("============================================\n");
+                    printf("\nNivel médio\n\n");
+                    printf("Qual foi a primeira seleçao campea da copa do mundo?\n\n");
+                    printf("1 - Uruguai\n\n");
+                    printf("2 - Inglaterra\n\n");
+                    printf("3 - Brasil\n\n");
+                    printf("4 - Italia\n\n");
+                    printf("5 - Alemanha\n\n");
+                    printf("============================================\n");
+                    printf("Resposta: ");
+                    scanf("%d", &resposta);
+                    printf("============================================\n");
+                    if(resposta == 0)
+                    {
+                    printf("Saindo do programa...");
+                    return 0;
+                    }
+                    else if(resposta == 1)
+                    {
+                        printf("Resposta correta!!\n");
+                        pontuacao += 2;
+                        break;
+                    }
+                    else
+                    {
+                        printf("Resposta incorreta!\n");
+                        tentativa++;
+                    }
+                }
+                //=================
+                //TERCEIRA PERGUNTA
+                //=================
+                tentativa = 0;
+                while(tentativa < 3)
+                {
+                    printf("============================================\n");
+                    printf("\nNivel Dificil\n\n");
+                    printf("Quem é o jogador com mais gols em copas do mundo?\n\n");
+                    printf("1 - Lionel Messi\n\n");
+                    printf("2 - Ronaldo Nazário\n\n");
+                    printf("3 - Edson Arantes do Nascimento(Pele)\n\n");
+                    printf("4 - Miroslav Klose\n\n");
+                    printf("5 - Kylian Mbappe\n\n");
+                    printf("============================================\n");
+                    printf("Resposta: ");
+                    scanf("%d", &resposta);
+                    printf("============================================\n");
+                    if(resposta == 0)
+                    {
+                    printf("Saindo do programa...");
+                    return 0;
+                    }
+                    else if(resposta == 5)
+                    {
+                        printf("Resposta correta!!! Essa foi dificil\n");
+                        pontuacao += 3;
+                        break;
+                    }
+                    else
+                    {
+                        printf("Resposta incorreta!\n");
+                        tentativa++;
+                    }
+                }
+                //=================
+                //QUARTA PERGUNTA
+                //=================
+                tentativa = 0;
+                while(tentativa < 3)
+                {
+                    printf("============================================\n");
+                    printf("\nNivel Medio\n\n");
+                    printf("Qual jogador é o maior artilheiro da Champions League?\n\n");
+                    printf("1 - Lionel Messi\n\n");
+                    printf("2 - Robert Lewandowski\n\n");
+                    printf("3 - Diego Armando Maradona\n\n");
+                    printf("4 - Gerd Muller\n\n");
+                    printf("5 - Cristiano Ronaldo\n\n");
+                    printf("============================================\n");
+                    printf("Resposta: ");
+                    scanf("%d", &resposta);
+                    printf("============================================\n");
+                    if(resposta == 0)
+                    {
+                    printf("Saindo do programa...");
+                    return 0;
+                    }
+                    else if(resposta == 5)
+                    {
+                        printf("Parabéns você acertou!!! Faltam apenas mais duas perguntas.\n");
+                        pontuacao += 2;
+                        break;
+                    }
+                    else
+                    {
+                        printf("Resposta incorreta! Tente novamente.\n");
+                        tentativa++;
+                    }
+                }
+                //================
+                //QUINTA PERGUNTA
+                //================
+                tentativa = 0;
+                while(tentativa < 3)
+                {
+                    printf("============================================\n");
+                    printf("\nNivel Medio\n\n");
+                    printf("Qual é o jogador com mais bolas de ouro na história?\n\n");
+                    printf("1 - Edson Arantes do Nascimento(Pele)\n\n");
+                    printf("2 - Ronaldo Nazario\n\n");
+                    printf("3 - Diego Armando Maradona\n\n");
+                    printf("4 - Cristiano Ronaldo\n\n");
+                    printf("5 - Lionel Messi\n\n");
+                    printf("============================================\n");
+                    printf("Resposta: ");
+                    scanf("%d", &resposta);
+                    printf("============================================\n");
+                    if(resposta == 0)
+                    {
+                    printf("Saindo do programa...");
+                    return 0;
+                    }
+                    else if(resposta == 5)
+                    {
+                        tentativa2 = 0;
+                        while(tentativa2 < 3)
+                        {
+                        printf("\nCorreto, o jogador com mais bolas de ouro é Messi.\n");
+                        printf("Quantas bolas de ouro ele ganhou?\n");
+                        printf("Digite aqui: ");
+                        scanf("%d", &bolas);
+                        if(bolas == 8)
+                        {
+                        printf("Parabens você acertou!!! Agora vamos para a pergunta final.\n");
+                        pontuacao += 2;
+                        break;
+                        }
+                        else
+                        {
+                        printf("Resposta incorreta!Tente novamente!\n");
+                        tentativa2++;
+                        }
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        printf("Resposta incorreta!Tente novamente.\n");
+                        tentativa++;
+                    }
+                }
+                //================
+                //ÚLTIMA PERGUNTA
+                //================
+                tentativa = 0;
+                while(tentativa < 3)
+                {
+                    printf("============================================\n");
+                    printf("\nULTIMA PERGUNTA\n");
+                    printf("Nivel Extremamente Dificil\n");
+                    printf("Valendo 5 pontos\n\n");
+                    printf("Qual é o maior artilheiro da historia do brasileirao?\n\n");
+                    printf("1 - Zico\n\n");
+                    printf("2 - Pele\n\n");
+                    printf("3 - Edmundo\n\n");
+                    printf("4 - Roberto Dinamite\n\n");
+                    printf("5 - Romario\n\n");
+                    printf("============================================\n");
+                    printf("Resposta: ");
+                    scanf("%d", &resposta);
+                    printf("============================================\n");
+                    if(resposta == 0)
+                    {
+                    printf("Saindo do programa...");
+                    return 0;
+                    }
+                    else if(resposta == 4)
+                    {
+                    printf("Resposta Correta!!! Parabens!!! Você acabou o quiz!\n\n");
+                    pontuacao += 5;
+                    break;
+                    }
+                    else
+                    {
+                    printf("Resposta incorreta! Tente Novamente!!\n");
+                    tentativa++;
+                    }
+                    
+                }
+               //=========================
+               //RESULTADO FINAL!!!
+               //=========================
+               printf("============================================\n");
+               printf("    RESULTADO FINAL!!!\n   "); 
+               printf("============================================\n");
+               printf("Jogador: %s", nome);
+               printf("Pontuacao Final: %d\n", pontuacao);
+               
+               if(pontuacao == 0)
+               {
+               printf("Voce nao sabe nada de futebol, melhore!\n");
+               return 0;
+               }
+               else if(pontuacao >= 15)
+               {
+               printf("Voce e CRAQUE, sabe muito e de tudo do mundo da bola\n");
+               return 0;
+               }
+               else if(pontuacao >= 10 && pontuacao <= 14)
+               {
+               printf("Voce sabe bastante de futebol! Parabens!\n");
+               return 0;
+               }
+               else if(pontuacao < 10 && pontuacao >= 5)
+               {
+               printf("Voce tem um certo conhecimento de futebol! Parabens!\n");
+               return 0;
+               }
+               else
+               {
+               printf("Voce sabe pouco de futebol, pelo menos sabe de algo xd\n");
+               return 0;
+               }
+                
+        }
+        //=======
+        //SAIR
+        //=======
+       else if(opcao == 2)
+       {
+           printf("Encerrando o programa...\n");
+       }
+       else
+       {
+       printf("Opcao invalida, digite novamente.\n");
+       }
+    
+   }while(opcao != 2);
+    
+    return 0;
+}
